@@ -32,7 +32,7 @@ oe_target = load_pickle("Ordinal.pkl")
 
 
 
-st.write("Click the Button for Prediction")
+st.write("Click the Button for Diabetes Prediction")
 if st.button("Predict"):
     input_data = pd.DataFrame({"Gender": [gender], "AGE": [age], "Urea": [urea], "Cr": [cr], "HbA1c": [hba1c], "Chol": [chol],
                                 "TG": [tg], "HDL": [hdl], "LDL": [ldl], "VLDL": [vldl], "BMI": [bmi]}) 
@@ -56,12 +56,12 @@ if st.button("Predict"):
     
     # Message based on result
     if result == "Non-Diabetic":
-        st.write("You are healthy, Keep maintaining a balanced diet and regular exercise.")
+        st.info("You are healthy, Keep maintaining a balanced diet and regular exercise.")
     elif result == "Pre-Diabetic":
         st.warning("You are at risk of diabetes. Consult a doctor soon, and maintain a healthy diet with regular exercise.")
     elif result == "Diabetic":
         st.error("You have diabetes. Please consult your doctor regularly, and maintain a healthy diet with regular exercise.")
     
-st.info("You are healthy, Keep maintaining a balanced diet and regular exercise.")
+
 
     
