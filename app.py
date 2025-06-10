@@ -31,12 +31,6 @@ knn = load_pickle("KNN.pkl")
 oe_target = load_pickle("Ordinal.pkl")
 
 
-# # Loading the Pickle Files
-# std = pickle.load(open("Standard.pkl", "rb"))
-# ohe = pickle.load(open("OneHot.pkl", "rb"))  # OneHotEncoder with drop="first"
-# model = pickle.load(open("KNN.pkl", "rb"))
-# oe_target = pickle.load(open("Ordinal.pkl", "rb"))  # OrdinalEncoder for target 
-
 
 st.write("Click the Button for Prediction")
 if st.button("Predict"):
@@ -48,16 +42,11 @@ if st.button("Predict"):
     gender_code=ohe.transform(input_data[['Gender']]) 
     input_data['Gender']=gender_code.reshape(-1)
 
-    st.write(input_data['Gender']) 
 
     input_scaled=std.transform(input_data) 
 
-    st.write(input_scaled)
-
-
     output_prediction=knn.predict(input_scaled) 
 
-    st.write(output_prediction[0],)
     
     labeling_output={0:"Non-Diabetic", 1:"Pre-Diabetic", 2:"Diabetic"}
 
@@ -73,7 +62,6 @@ if st.button("Predict"):
     elif result == "Diabetic":
         st.error("You have diabetes. Please consult your doctor regularly, and maintain a healthy diet with regular exercise.")
     
-st.write("You are healthy, Keep maintaining a balanced diet and regular exercise.")
-st.warning("You are at risk of diabetes. Consult a doctor soon, and maintain a healthy diet with regular exercise.")
-st.error("You have diabetes. Please consult your doctor regularly, and maintain a healthy diet with regular exercise.")
+st.info("You are healthy, Keep maintaining a balanced diet and regular exercise.")
+
     
