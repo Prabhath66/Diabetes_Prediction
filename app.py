@@ -61,11 +61,19 @@ if st.button("Predict"):
     
     labeling_output={0:"Non-Diabetic", 1:"Pre-Diabetic", 2:"Diabetic"}
 
-    st.write(f"Prediction of the Given data results in {labeling_output.get(output_prediction[0])}")
-    
-     # Message based on result
-    if result_label == "Pre-Diabetic":
-        st.warning("You are in the pre-diabetic range. It's advisable to consult a healthcare professional for further evaluation.")
-    elif result_label == "Diabetic":
-        st.error("You are classified as diabetic. Please seek medical advice for appropriate management.")
+    result=labeling_output.get(output_prediction[0])
 
+    st.write(f"Prediction of the Given data results in {result}")
+    
+    # Message based on result
+    if result == "Non-Diabetic":
+        st.write("You are healthy, Keep maintaining a balanced diet and regular exercise.")
+    elif result == "Pre-Diabetic":
+        st.warning("You are at risk of diabetes. Consult a doctor soon, and maintain a healthy diet with regular exercise.")
+    elif result == "Diabetic":
+        st.error("You have diabetes. Please consult your doctor regularly, and maintain a healthy diet with regular exercise.")
+    
+st.write("You are healthy, Keep maintaining a balanced diet and regular exercise.")
+st.warning("You are at risk of diabetes. Consult a doctor soon, and maintain a healthy diet with regular exercise.")
+st.error("You have diabetes. Please consult your doctor regularly, and maintain a healthy diet with regular exercise.")
+    
