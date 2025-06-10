@@ -5,7 +5,7 @@ import pandas as pd
 
 
 st.title("Diabetes Prediction") 
-st.info("Enter the details to predict the Diabetes Status")
+st.info("Fill the details to predict the Diabetes Status")
 
 # Getting Details for User
 
