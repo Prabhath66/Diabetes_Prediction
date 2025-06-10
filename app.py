@@ -45,7 +45,7 @@ if st.button("Predict"):
 
     st.write(input_data)
 
-    gender_code=ohe.transfrom(input_data[['Gender']]) 
+    gender_code=ohe.transform(input_data[['Gender']]) 
     input_data['Gender']=gender_code.reshape(-1)
 
     st.write(input_data['Gender']) 
