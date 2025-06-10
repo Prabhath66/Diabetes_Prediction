@@ -18,8 +18,6 @@ bmi=st.number_input("BMI", min_value=19 ,max_value=48 )
 
 
 
-import pickle
-import os
 
 def load_pickle(file_path):
     with open(file_path, "rb") as f:
