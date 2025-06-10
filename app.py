@@ -4,6 +4,9 @@ import pandas as pd
 
 
 
+st.title("Diabetes Prediction") 
+st.info("Enter the details to predict the Diabetes Status")
+
 # Getting Details for User
 
 col1,col2=st.columns(2)
