@@ -18,11 +18,25 @@ bmi=st.number_input("BMI", min_value=19 ,max_value=48 )
 
 
 
-# Loading the Pickle Files
-std = pickle.load(open("Standard.pkl", "rb"))
-ohe = pickle.load(open("OneHot.pkl", "rb"))  # OneHotEncoder with drop="first"
-model = pickle.load(open("KNN.pkl", "rb"))
-oe_target = pickle.load(open("Ordinal.pkl", "rb"))  # OrdinalEncoder for target 
+import pickle
+import os
+
+def load_pickle(file_path):
+    with open(file_path, "rb") as f:
+        return pickle.load(f)
+
+# Load models and encoders
+std = load_pickle("Standard.pkl")
+ohe = load_pickle("OneHot.pkl")  # OneHotEncoder(drop="first")
+model = load_pickle("KNN.pkl")
+oe_target = load_pickle("Ordinal.pkl")
+
+
+# # Loading the Pickle Files
+# std = pickle.load(open("Standard.pkl", "rb"))
+# ohe = pickle.load(open("OneHot.pkl", "rb"))  # OneHotEncoder with drop="first"
+# model = pickle.load(open("KNN.pkl", "rb"))
+# oe_target = pickle.load(open("Ordinal.pkl", "rb"))  # OrdinalEncoder for target 
 
 
 st.write("Click the Button for Prediction")
