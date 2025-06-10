@@ -59,7 +59,7 @@ if st.button("Predict"):
     st.write(output_prediction)
     labeling_output={0:"Non-Diabetic", 1:"Pre-Diabetic", 2:"Diabetic"}
 
-    st.write(f"Prediction of the Given data results in {labeling_output.get(output_prediction, "Unknown")}")
+    st.write(f"Prediction of the Given data results in {labeling_output.get(output_prediction, "Unknown"}")
     
      # Message based on result
     if result_label == "Pre-Diabetic":
