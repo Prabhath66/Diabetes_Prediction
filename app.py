@@ -40,8 +40,8 @@ oe_target = load_pickle("Ordinal.pkl")
 
 st.write("Click the Button for Prediction")
 if st.button("Predict"):
-    input_data = pd.DataFrame({"Gender": [gender], "Age": [age], "Urea": [urea], "Creatinine": [cr], "HbA1c": [hba1c], "Cholesterol": [chol],
-                                "Triglycerides": [tg], "HDL": [hdl], "LDL": [ldl], "VLDL": [vldl], "BMI": [bmi]}) 
+    input_data = pd.DataFrame({"Gender": [gender], "AGE": [age], "Urea": [urea], "Cr": [cr], "HbA1c": [hba1c], "Chol": [chol],
+                                "TG": [tg], "HDL": [hdl], "LDL": [ldl], "VLDL": [vldl], "BMI": [bmi]}) 
 
     st.write(input_data)
 
