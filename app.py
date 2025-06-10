@@ -27,7 +27,7 @@ def load_pickle(file_path):
 # Load models and encoders
 std = load_pickle("Standard.pkl")
 ohe = load_pickle("OneHot.pkl")  # OneHotEncoder(drop="first")
-model = load_pickle("KNN.pkl")
+knn = load_pickle("KNN.pkl")
 oe_target = load_pickle("Ordinal.pkl")
 
 
@@ -44,4 +44,19 @@ if st.button("Predict"):
                                 "Triglycerides": [tg], "HDL": [hdl], "LDL": [ldl], "VLDL": [vldl], "BMI": [bmi]}) 
 
     st.write(input_data)
+
+    gender_code=ohe.transfrom(input_data[['Gender']]) 
+    input_data['Gender']=gender_code.reshape(-1)
+
+    st.write(input_data['Gender']) 
+
+    input_scaled=std.transform(input_data) 
+
+    st.write(input_scaled)
+
+
+    output_prediction=knn.predict(input_scaled) 
+    st.write(output_prediction)
+
+    
 
